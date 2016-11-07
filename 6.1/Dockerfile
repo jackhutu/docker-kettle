@@ -1,11 +1,6 @@
-# Mainly based on:
-# https://github.com/aloysius-lim/docker-pentaho-di/blob/master/docker/Dockerfile
-# https://github.com/wmarinho/docker-pentaho/blob/master/data-integration/Dockerfile
-# Docker supports OpenJDK only
-# For versions and tags see https://github.com/docker-library/docs/blob/master/java/tag-details.md
 FROM java:8-jre
 
-MAINTAINER Diethard Steiner
+MAINTAINER Jack Hu <hello@jackhu.top>
 
 # Set required environment vars
 ENV PDI_RELEASE=6.1 \
