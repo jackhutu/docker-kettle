@@ -29,8 +29,8 @@ WORKDIR /root
 
 ADD startup.sh ./
 ADD supervisord.conf ./
+RUN chmod +x startup.sh
 
 EXPOSE 5900
-EXPOSE 22
 
 ENTRYPOINT ["./startup.sh"]
