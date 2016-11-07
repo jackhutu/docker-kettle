@@ -19,4 +19,6 @@ EXPOSE 5901
 
 # Copy VNC script that handles restarts
 COPY vnc.sh /opt/
+RUN chmod +x /opt/vnc.sh
+
 CMD ["/opt/vnc.sh"]
