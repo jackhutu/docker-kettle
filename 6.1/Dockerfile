@@ -4,7 +4,7 @@ MAINTAINER Jack Hu <hello@jackhu.top>
 
 # 安装jdk
 RUN apt-get update && \
-    apt-get install -y openjdk-8-jdk \
+    apt-get install -y openjdk-8-jdk && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
