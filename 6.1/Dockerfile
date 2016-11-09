@@ -12,7 +12,6 @@ RUN apt-get update && \
 # 设置环境变量
 ENV PDI_RELEASE=6.1 \
     PDI_VERSION=6.1.0.1-196 \
-    CARTE_PORT=8181 \
     PENTAHO_JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
     PENTAHO_HOME=/opt/pentaho
 
@@ -20,8 +19,7 @@ ENV PDI_RELEASE=6.1 \
 RUN mkdir ${PENTAHO_HOME} \
     $PENTAHO_HOME/docker-entrypoint.d \
     $PENTAHO_HOME/templates \
-    $PENTAHO_HOME/scripts \
-    /root/.kettle
+    $PENTAHO_HOME/scripts
 
 # 复制模板文件
 COPY carte-*.config.xml $PENTAHO_HOME/templates/
@@ -41,8 +39,8 @@ RUN wget --progress=dot:giga \
 ENV KETTLE_HOME=$PENTAHO_HOME/data-integration \
     PATH=$KETTLE_HOME:$PATH
 
-# Expose Carte Server
-EXPOSE ${CARTE_PORT}
+# 默认CARTE_PORT端口
+EXPOSE 8080
 
 # 工作目录
 WORKDIR $KETTLE_HOME
